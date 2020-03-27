@@ -236,6 +236,8 @@ class JenkinsCli(object):
             print("Cannot set branch name")
 
     def start(self, args):
+        if args.bargs is not None:
+            args.bargs = dict([x.split(':') for x in args.bargs])
         for job in args.job_name:
             job_name = self._check_job(job)
             start_status = self.jenkins.build_job(job_name)
