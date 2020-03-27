@@ -41,6 +41,7 @@ def load_parser():
 
     start_parser = subparsers.add_parser('start', help='Start job')
     start_parser.add_argument('job_name', help='Job to start', nargs='*')
+    start_parser.add_argument('--bargs', metavar='bargs', help='Build arguments. (in key1:value1 key2:value2 format)', nargs='*', default=None)
 
     start_parser = subparsers.add_parser('info', help='Job info')
     start_parser.add_argument('job_name', help='Job to get info for')
